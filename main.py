@@ -3,12 +3,14 @@ import time
 from snake import Snake
 from food import Food
 from scoreboard import ScoreBoard
+from user import User
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 
+user_id = User()
 snake = Snake()
 food = Food()
 score = ScoreBoard()

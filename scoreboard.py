@@ -11,6 +11,8 @@ class ScoreBoard(Turtle):
         self.score = 0
         with open("data.txt", "r") as file:
             self.high_score = int(file.read())
+        with open("user_data.txt", "r") as user_file:
+            self.user_id = user_file.read()
         self.color("white")
         self.hideturtle()
         self.penup()
@@ -19,7 +21,8 @@ class ScoreBoard(Turtle):
 
     def update_scoreboard(self):
         self.clear()
-        self.write(f"Score: {self.score} High Score: {self.high_score}", move=False, align=ALIGNMENT, font=FONT)
+        self.write(f"Score: {self.score} Previous High Score was : {self.high_score} by {self.user_id}", move=False,
+                   align=ALIGNMENT, font=FONT)
 
     def reset(self):
         if self.score > self.high_score:
